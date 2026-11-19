@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Syed Muhammad Irfan</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">MY PORTFOLIO</a>
+    <button class="menu-btn" id="menu-btn" aria-label="Toggle Menu">&#9776;</button>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><button class="btn btn-secondary" id="theme-btn">Dark Mode</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="card">
+      <h1>My Projects</h1>
+      <p>Click a category button to filter my work:</p>
+      <button class="btn filter-btn" data-category="all">All</button>
+      <button class="btn btn-secondary filter-btn" data-category="web">Web App</button>
+      <button class="btn btn-secondary filter-btn" data-category="hardware">Hardware / Control</button>
+    </section>
+
+    <!-- Ditukar kepada div supaya tiada amaran "Section lacks heading" -->
+    <div>
+      <!-- Project 1 -->
+      <article class="card project-item" data-category="hardware">
+        <img src="images/spcsx.jpeg" alt="Smart Poultry Care System XENO prototype" style="width:100%; border-radius:8px;">
+        <h2>1. Smart Poultry Care System XENO (SPCSX)</h2>
+        <p><strong>Problem:</strong> Industrial grade poultry care is too expensive.</p>
+        <p><strong>Role:</strong> System Integrator</p>
+        <p><strong>Tools:</strong> Arduino Mega, Arduino IDE</p>
+        <p><strong>Outcome:</strong> The project system successfully worked as desired with much cheaper cost.</p>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="card project-item" data-category="hardware">
+        <img src="images/HMI.jpeg" alt="PLC Integration with COBOT HMI interface" style="width:100%; border-radius:8px;">
+        <h2>2. PLC Integration with COBOT</h2>
+        <p><strong>Problem:</strong> COBOT and PLC system was not integrated yet.</p>
+        <p><strong>Role:</strong> HMI Designer</p>
+        <p><strong>Tools:</strong> CX Designer, CX Programmer</p>
+        <p><strong>Outcome:</strong> Every button and lamps in the HMI works perfectly for PLC system in every mode (manual/auto/maintenance).</p>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="card project-item" data-category="web">
+        <img src="images/Floodrisk.jpeg" alt="Dashboard for Flood Risk Forecast" style="width:100%; border-radius:8px;">
+        <h2>3. Flood Risk Forecast</h2>
+        <p><strong>Problem:</strong> Most flood victims might miss flood forecast news.</p>
+        <p><strong>Role:</strong> Full-Stack Student Developer</p>
+        <p><strong>Tools:</strong> Python</p>
+        <p><strong>Outcome:</strong> Responsive multi-page website hosted on GitHub Pages.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Syed Muhammad Irfan. All rights reserved.</p>
+    <p>
+      <a href="https://github.com/irfansyed-umpsa" target="_blank">GitHub</a> |
+      <a href="https://www.linkedin.com/in/syedirfan03" target="_blank">LinkedIn</a> |
+      <a href="mailto:syedmuhammadirfan03@gmail.com">Email</a>
+    </p>
+  </footer>
+
+</body>
+</html>
