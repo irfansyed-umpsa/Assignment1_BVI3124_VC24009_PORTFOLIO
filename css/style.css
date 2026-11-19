@@ -1,0 +1,348 @@
+/* =========================================================
+   BVI3124 Assignment 1 - Personal Portfolio
+   Name: SYED MUHAMMAD IRFAN BIN SYED ABD RAZIB
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ef7474;
+  color: #000000;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Dark Mode Class (JavaScript toggle) */
+body.dark-mode {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+/* Header & Navigation (Flexbox) */
+header {
+  background-color: #eb5d5d;
+  color: #ffffff;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  color: #cbd5e1;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: #15803d;
+  color: #ffffff;
+}
+
+.menu-btn {
+  display: none;
+  background: none;        /* Buang kotak latar belakang */
+  border: none;            /* Buang garis sempadan */
+  color: #ffffff;          /* Warna 3 garisan putih */
+  font-size: 1.8rem;       /* Besarkan ikon hamburger */
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.menu-btn:hover {
+  color: #22c55e;          /* Bertukar hijau bila disentuh */
+}
+
+/* Main Container */
+main {
+  max-width: 960px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* Card Box */
+.card {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 24px 32px;
+  margin-bottom: 24px;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+body.dark-mode .card {
+  background-color: #1e293b;
+  border-color: #334155;
+  color: #f8fafc;
+}
+
+h1, h2, h3 {
+  color: #0f172a;
+  margin-top: 0;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #ffffff;
+}
+
+/* Hero Section (Flexbox) */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.profile-pic {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #15803d;
+}
+
+/* Grid Layout untuk Highlights & Projects */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 22px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #15803d;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #4e534f3e;
+}
+
+.btn-secondary {
+  background-color: #334155;
+}
+
+.btn-secondary:hover {
+  background-color: #1e293b;
+}
+
+/* Table Requirement */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid #cbd5e1;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+/* Skill Progress Bar */
+.bar-bg {
+  width: 100%;
+  height: 14px;
+  background-color: #cbd5e1;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.bar-fill {
+  height: 14px;
+  background-color: #15803d;
+  border-radius: 8px;
+}
+
+/* Form Inputs (contact.html) */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.message {
+  min-height: 1.2em;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Hidden utility for JS toggle */
+.hidden {
+  display: none;
+}
+
+/* Footer */
+footer {
+  background-color: #0f172a;
+  color: #cbd5e1;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+footer a { /* Link */
+  color: #22c55e;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+/* =========================================================
+   RESPONSIVE MEDIA QUERIES (Breakpoint 1: <= 768px)
+   ========================================================= */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  nav.open {
+    display: block;
+  }
+
+  header {
+    flex-wrap: wrap;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE MEDIA QUERIES (Breakpoint 2: <= 480px)
+   ========================================================= */
+@media (max-width: 480px) {
+  .card {
+    padding: 16px 20px;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+
+/* =========================================================
+   CERTIFICATE POP-UP MODAL
+   ========================================================= */
+.modal {
+  display: none;               /* Tersembunyi secara asal */
+  position: fixed;             /* Tetap di tengah skrin walaupun skrol */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal.show {
+  display: flex;               /* Muncul bila JS tambah class "show" */
+}
+
+.modal-box {
+  position: relative;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+.modal-box img {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.close-btn {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background-color: #b91c1c;
+  color: #ffffff;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
